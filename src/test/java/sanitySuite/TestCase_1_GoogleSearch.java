@@ -75,16 +75,16 @@ public class TestCase_1_GoogleSearch extends TestBase{
         obj_google_search.vactionName_method();
         PageBase.wait(3);
         log.info("Calendar");
-        DatePicker obj = new DatePicker();
-        obj.calendar_method();
-        PageBase.wait(3);
-        obj_google_search.vacationSave_method();
-        log.info("Vacation Save"); 
+    //    DatePicker obj1 = new DatePicker();
+    //    obj1.calendar_method();
+  ///      PageBase.wait(3);
+    //    obj_google_search.vacationSave_method();
+    //    log.info("Vacation Save"); 
         
         
       //  obj_google_search.start_method();
-      //  PageBase.wait(2);
- /*    String month=  driver.findElement(By.cssSelector("[class='month drp-animate']")).getText();
+   //  PageBase.wait(2);
+    String month=  driver.findElement(By.cssSelector("[class='month drp-animate']")).getText();
      	
 		System.out.println(month);
 		
@@ -114,7 +114,7 @@ public class TestCase_1_GoogleSearch extends TestBase{
 	        
 	        PageBase.wait(3); */
 	        
-	  /*    List<WebElement> dateAv = driver.findElements(By.xpath("//div[@class='calendar left ng-star-inserted']/div/table/tbody/tr/td[contains(@class,'available')]"));
+	   List<WebElement> dateAv = driver.findElements(By.xpath("//div[@class='calendar left ng-star-inserted']/div/table/tbody/tr/td[contains(@class,'available')]"));
 		       int countAv=driver.findElements(By.xpath("//div[@class='calendar left ng-star-inserted']/div/table/tbody/tr/td[contains(@class,'available')]")).size();
 		        
 		        for (int i=0; i<countAv; i++) {
@@ -160,6 +160,7 @@ public class TestCase_1_GoogleSearch extends TestBase{
 		        } 
 		        
 		        PageBase.wait(3);
+		        
 		        obj_google_search.vacationSave_method();
 		        log.info("Vacation Save");
 		        
