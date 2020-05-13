@@ -150,12 +150,12 @@ public class Syn_google_search extends PageBase {
 	}
 
 	public void vacationSave_method(){
-		log.info("Open page");
+		log.info("save");
 		vacationSave.click();
 		
 	}
 	
-	public void calendar_method(){
+	/*	public void calendar_method(){
 		
 String month=  driver.findElement(By.cssSelector("[class='month drp-animate']")).getText();
      	
@@ -216,7 +216,7 @@ String month1=  driver.findElement(By.cssSelector("[class='month drp-animate']")
 		        	
 		        } 
 		        
-	}
+	}  			*/
 		
 	
 public void start_method(){
