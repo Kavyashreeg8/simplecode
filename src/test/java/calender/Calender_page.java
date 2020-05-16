@@ -24,10 +24,10 @@ public class Calender_page extends TestBase {
 		// driver.findElement(By.xpath("//div[@class='DayPicker-NavBar']/span[2]")).click();
 		// String
 		// month=driver.findElement(By.xpath("//div[@class='DayPicker-Months']/div/div")).getText();
-	//	String month = driver.findElement(By.cssSelector("[class='DayPicker-Month'] [class='DayPicker-Caption']"))
-			//	.getText();
-	//	System.out.println(month);
-	/*	while (!month.contains("August 2020")) {
+	String month = driver.findElement(By.cssSelector("[class='DayPicker-Month'] [class='DayPicker-Caption']"))
+			.getText();
+	System.out.println(month);
+		while (!month.contains("August 2020")) {
 			System.out.println(month);
 			driver.findElement(By.xpath("//div[@class='DayPicker-NavBar']/span[2]")).click();
 			month = driver.findElement(By.cssSelector("[class='DayPicker-Month'] [class='DayPicker-Caption']"))
@@ -52,7 +52,7 @@ public class Calender_page extends TestBase {
 		
 		List<WebElement> date1 = driver.findElements(By.cssSelector("[class='DayPicker-Body'] [class='DayPicker-Week'] [class='DayPicker-Day']"));
 		int count = date1.size();
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < count; i++) {
 			String text = driver.findElements(By.cssSelector("[class='DayPicker-Body'] [class='DayPicker-Week'] [class='DayPicker-Day']")).get(i).getText();
 			System.out.println(text);
 			if (text.equalsIgnoreCase("13")) {
