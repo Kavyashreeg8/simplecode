@@ -83,9 +83,26 @@ public class Syn_google_search extends PageBase {
 	@FindBy(xpath = "//div[@class='col first col-100-c0 product-grid clearfix']/a[2]")
 	WebElement start1;
 	
+	@FindBy(id= "vacation_name")
+	WebElement existingName;
 	
+	@FindBy(id= "clear_vacation_name")
+	WebElement cancelSave;
 	
+	@FindBy(xpath= "//div[@class='fs-vacations__body']/table/tbody/tr/td[4]")
+	WebElement editVacation;
 	
+	@FindBy(id= "clear_vacation_name")
+	WebElement clearName;
+	
+	@FindBy(id= "vacation_name")
+	WebElement editName;
+	
+	@FindBy(xpath= "//div[@class='fs-vacations__body']/table/tbody/tr[2]/td[4]")
+	WebElement editVariation;
+	
+	@FindBy(id= "vacation_name")
+	WebElement editBuilding88;
 	
 	
 	// Web Element for Google Search first option
@@ -108,6 +125,7 @@ public class Syn_google_search extends PageBase {
 	
 	public void emailNext_method(){
 		log.info("Open page");
+		
 		emailNext.click();
 		
 	}
@@ -146,7 +164,7 @@ public class Syn_google_search extends PageBase {
 	
 	public void vactionName_method() {
 		log.info("vacatio name");
-		vacationName.sendKeys("Building1");
+		vacationName.sendKeys("Building3");
 	}
 
 	public void vacationSave_method(){
@@ -155,6 +173,52 @@ public class Syn_google_search extends PageBase {
 		
 	}
 	
+	public void existingName_method(){
+		log.info("Building1");
+		existingName.sendKeys("Building1");
+		
+	}	
+	
+	public void cancelSave_method(){
+		log.info("save");
+		cancelSave.click();
+		
+	}
+	
+	
+	public void editVacation_method(){
+		log.info("edit vacation");
+		editVacation.click();
+		
+	}
+	
+	public void clearName_method(){
+		log.info("cancel vacation name");
+		clearName.click();
+		
+	}
+	
+	public void editName_method(){
+		log.info("Building2");
+		editName.sendKeys("Building2"); 
+		
+	}	
+	
+	public void editVariation_method(){
+		log.info("edit Building");
+		editVariation.click(); 
+		
+	}	
+	
+	public void editBuilding88_method(){
+		log.info("edit Building");
+		editBuilding88.sendKeys("Building88");
+		
+	}	
+	
+	
+	
+
 	/*	public void calendar_method(){
 		
 String month=  driver.findElement(By.cssSelector("[class='month drp-animate']")).getText();
@@ -280,4 +344,30 @@ public void start_method(){
 		this.select_first_option();
 		
 	}*/
+
+	public void search_option () {
+
+	//this.select_first_option();
+		
+		WebElement table = driver.findElement(By.xpath("//div[@class='fs-vacations__body']/table/tbody"));
+		String c= table.getText();
+		//System.out.println(c);
+		List<WebElement> rowNumberList = table.findElements(By.tagName("tr"));
+		int rowSize= rowNumberList.size();
+		System.out.println("Row Size" +rowSize);
+		for(int i=1; i<=rowSize; i++) {
+			String value= driver.findElement(By.xpath("//div[@class='fs-vacations__body']/table/tbody[1]/tr["+i+"]/td[2]")).getText();
+			System.out.println(value);
+			if(value.equals("13 Aug 20")) {
+				System.out.println("Value found is " + value);
+				driver.findElement(By.xpath("//div[@class='fs-vacations__body']/table/tbody/tr["+i+"]/td[5]")).click();
+			log.info("delete Vacation");
+				PageBase.wait(2);
+				driver.findElement(By.className("confirmation-dialog__buttongroup__ok")).click();
+			log.info("dialog OK");
+				break;
+			}
+		}
+		
+	}
 }
